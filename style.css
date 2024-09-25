@@ -154,6 +154,7 @@ nav {
     }
 
     #menu {
+        transform: translateX(-100%);
         display: flex;
         opacity: 0;
         text-wrap: wrap;
@@ -162,13 +163,13 @@ nav {
         flex-direction: row;
         background-color: rgba(0,0,0,0.3);
         position: absolute;
-        top: 111.8px;
+        top: 111.9px;
         right: 0;
         width: 100%;
         align-items:center;
         justify-content: center;
         padding: 1rem;
-        transition: all .2s ease;
+        transition: all .3s ease;
     }
 }
 
@@ -343,7 +344,6 @@ nav > ul > li > a{
     box-shadow: 0 0 15px var(--coradicional);
     background-color: var(--coradicional);
     color: var(--corfundo);
-    margin-right: .5rem;
     border-radius: 4rem;
     color: white;
     font-weight: 600;
@@ -378,28 +378,6 @@ nav > ul > li > a{
 }
 
 
-#changeColorButton {
-    cursor: pointer;
-    display: flex;
-}
-
-#Sol {
-    display: flex;
-    z-index: 15;
-    background-color: rgb(26, 25, 25);
-    padding: 5px;
-    border: solid 2px white;
-    fill: white;
-    animation: rodar 1s ease-in-out;
-}
-
-#Lua{
-    z-index: 15;
-    display: none;
-    background-color: white;
-    fill: rgb(26, 25, 25);
-    border: 2px solid rgb(26, 25, 25);
-}
 
 .incones{
     margin-left: 3rem;
@@ -474,10 +452,26 @@ nav > ul > li > a{
 
     .conteudo img{
         width: 300px;
+        margin-right: -0rem;
     }
 
 
    
+}
+
+@media screen and (max-width:400px)
+{
+    .conteudo{
+        padding-top: 9rem;
+        max-width: 100%;
+    }
+    .conteudo h1{
+        text-wrap: wrap;
+        font-size: 1.9rem;
+    }
+    .conteudo h3{
+        font-size: 1.5rem;
+    }
 }
 
 .conteudo img:hover{
@@ -654,8 +648,23 @@ nav > ul > li > a{
     .content{
         width: 100%;
     }
+    .content p{
+        font-size: 1rem;
+    }
 }
 
+@media screen and (max-width: 400px)
+{
+    .texto p{
+       width: 80%;
+    }
+    .texto p{
+        font-size: .8em;
+    }
+    .content h3{
+        font-size: 1.2rem;
+    }
+}
 
 /*--------serviços----------*/
 
@@ -685,7 +694,7 @@ nav > ul > li > a{
     border-radius: 25px;
     padding: 25px;
     background-color: var(--coradicional);
-    width: 350px;
+    width: 340px;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -712,6 +721,13 @@ nav > ul > li > a{
     gap: 2rem;
     display: flex;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+    .frontend, .mobile, .backend{
+    width: 88%;
+    
+    }
 }
 
 /*--------projetos----------*/
@@ -846,6 +862,7 @@ nav > ul > li > a{
 }
 
 
+
 /*------CONTATO--------*/
 
 @media screen and (max-width: 1380px) { 
@@ -957,6 +974,7 @@ footer a:hover {
 }
 
 .to-top {
+    z-index: 2000;
     position: fixed;
     bottom: 70px;
     right: 20px;

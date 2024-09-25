@@ -108,29 +108,51 @@ document.querySelectorAll('.to-top').forEach(button => {
   });
 });
 
-
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 let isMenuOpen = false;
+let isAnimating = false; // Adiciona um controle de animação
 
 menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    
-    // Verifica se o menu está aberto ou fechado e aplica a rotação
+    if (isAnimating) return; 
+
+    isAnimating = true; 
+
     if (isMenuOpen) {
-        menuToggle.style.transform = 'rotate(0deg)'; // Volta à posição original
-        setTimeout(menu.style.opacity = '0', 500);
+        menuToggle.style.transform = 'rotate(0deg)';
+        
         setTimeout(() => {
-          menu.style.display = 'none'; 
-      }, 400); 
-      setTimeout(isMenuOpen = false, 550);   
-
+            menu.style.transform = 'translateX(-100%)';
+        }, 100); 
+        
+        setTimeout(() => {
+            menu.style.opacity = '0';
+        }, 200); 
+        
+        setTimeout(() => {
+            menu.style.display = 'none';
+            isMenuOpen = false;
+            isAnimating = false; 
+        }, 600); 
+        
     } else {
-        menuToggle.style.transform = 'rotate(90deg)'; // Rotaciona 90 graus
-        menu.style.display= 'flex';
-        setTimeout(menu.style.opacity = '1', 500);   
-        setTimeout(isMenuOpen = true, 550);     
+        menuToggle.style.transform = 'rotate(90deg)'; 
+        
+        menu.style.display = 'flex'; 
+        
+        setTimeout(() => {
+            menu.style.transform = 'translateX(0%)';
+        }, 200); 
+        
+        setTimeout(() => {
+            menu.style.opacity = '1';
+        }, 200); 
+        
+        setTimeout(() => {
+            isMenuOpen = true;
+            isAnimating = false;
+        }, 600); 
     }
-
 });
+
 
