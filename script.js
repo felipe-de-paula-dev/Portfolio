@@ -108,6 +108,27 @@ document.querySelectorAll('.scrollButton').forEach(button => {
 });
 
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+let isMenuOpen = false;
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    
+    // Verifica se o menu está aberto ou fechado e aplica a rotação
+    if (isMenuOpen) {
+        menuToggle.style.transform = 'rotate(0deg)'; // Volta à posição original
+        setTimeout(menu.style.opacity = '0', 500);
+        setTimeout(() => {
+          menu.style.display = 'none'; 
+      }, 400); 
+
+    } else {
+        menuToggle.style.transform = 'rotate(90deg)'; // Rotaciona 90 graus
+        menu.style.display= 'flex';
+        setTimeout(menu.style.opacity = '1', 500);        
+    }
+
+    isMenuOpen = !isMenuOpen; // Alterna o estado do menu
+});
+
