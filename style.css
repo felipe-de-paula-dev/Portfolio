@@ -470,9 +470,17 @@ nav > ul > li > a{
         font-size: 1.9rem;
     }
     .conteudo h3{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        text-wrap: wrap;
     }
 }
+
+@media (max-width: 400px) {
+    #textoamudar {
+      display: block; 
+      margin-top: 1px; 
+    }
+  }
 
 .conteudo img:hover{
     transition: .2s ease-in-out;

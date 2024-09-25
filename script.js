@@ -156,3 +156,20 @@ menuToggle.addEventListener('click', () => {
 });
 
 
+document.getElementById("insta").addEventListener("click", function() {
+  setTimeout(function() {
+      window.open("https://www.instagram.com/lypeex/", "_blank"); 
+  }, 300);  
+});
+
+document.getElementById("linkedin").addEventListener("click", function() {
+  setTimeout(function() {
+      window.open("https://www.linkedin.com/in/felipe-de-paula-254654329/", "_blank"); 
+  }, 300); 
+});
+
+document.getElementById("git").addEventListener("click", function() {
+  setTimeout(function() {
+      window.open("https://github.com/felipe-de-paula-dev", "_blank"); 
+  }, 300); 
+});
