@@ -94,7 +94,8 @@ document.getElementById("formContato").addEventListener("submit", function(event
   }
 });
 
-document.querySelectorAll('.scrollButton').forEach(button => {
+
+document.querySelectorAll('.to-top').forEach(button => {
   button.addEventListener('click', function() {
     const targetID = this.getAttribute('data-target'); // Pega o ID da seção alvo a partir do atributo data-target
     const targetSection = document.querySelector(targetID); // Seleciona a seção alvo
@@ -122,13 +123,14 @@ menuToggle.addEventListener('click', () => {
         setTimeout(() => {
           menu.style.display = 'none'; 
       }, 400); 
+      setTimeout(isMenuOpen = false, 550);   
 
     } else {
         menuToggle.style.transform = 'rotate(90deg)'; // Rotaciona 90 graus
         menu.style.display= 'flex';
-        setTimeout(menu.style.opacity = '1', 500);        
+        setTimeout(menu.style.opacity = '1', 500);   
+        setTimeout(isMenuOpen = true, 550);     
     }
 
-    isMenuOpen = !isMenuOpen; // Alterna o estado do menu
 });
 

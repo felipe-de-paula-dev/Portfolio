@@ -544,6 +544,7 @@ nav > ul > li > a{
 }
 
 .container {
+    max-width: 100%;
     padding: 20px 40px;
     position: relative;
     width: 50%;
@@ -636,6 +637,7 @@ nav > ul > li > a{
     .container.right::after {
         left: calc(50% - 12px);
     }
+
 }
 
 
@@ -648,6 +650,9 @@ nav > ul > li > a{
         width: 100%;
         left: 0;
        
+    }
+    .content{
+        width: 100%;
     }
 }
 
@@ -845,7 +850,8 @@ nav > ul > li > a{
 
 @media screen and (max-width: 1380px) { 
     .contact-form{
-        margin-top: 10rem;
+        margin-top: 12rem;
+        margin-bottom: 5rem;
     }
 }
 
@@ -952,7 +958,7 @@ footer a:hover {
 
 .to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 70px;
     right: 20px;
     background-color: var(--coradicional);
     color: white;
