@@ -24,7 +24,6 @@ window.scrollTo(0, 0);
   
     if (letraAtualIndex === 0) {
       textoElemento.textContent = "|"; 
-      deletando = false;
       letraAtualIndex++;
       palavraAtualIndex = (palavraAtualIndex + 1) % palavras.length;
       setTimeout(alterarTexto, 500); // Atraso de 2 segundos para começar a próxima palavra
@@ -56,7 +55,6 @@ window.scrollTo(0, 0);
 
 
 const dark = document.getElementById("dark");
-const nav = document.getElementById("nav");
 
 dark.onclick = function() {
     dark.classList.toggle("active"); 
@@ -66,13 +64,13 @@ dark.onclick = function() {
       document.documentElement.style.setProperty('--cortextos', 'white');
       document.documentElement.style.setProperty('--coradicional', '#836FFF');
       document.documentElement.style.setProperty('--corfundoitens', '#121212');
-      nav.style.backgroundColor = 'rgba(0,0,0,0.4)';
+      document.documentElement.style.setProperty('--cortexto2', '#c1c1c1');
     } else {
       document.documentElement.style.setProperty('--corfundo', '#fff');
       document.documentElement.style.setProperty('--cortextos', 'black');
       document.documentElement.style.setProperty('--coradicional', '#1aa9bc');
       document.documentElement.style.setProperty('--corfundoitens', '#ebeaea');
-      nav.style.backgroundColor = 'rgba(0,0,0,0.3)';
+      document.documentElement.style.setProperty('--cortexto2', '#1d1d1d');
     }
 };
 
@@ -173,3 +171,77 @@ document.getElementById("git").addEventListener("click", function() {
       window.open("https://github.com/felipe-de-paula-dev", "_blank"); 
   }, 300); 
 });
+
+
+
+window.sr = ScrollReveal({ reset: true });
+
+
+sr.reveal('.texto-container, .container.left .content', {
+  distance: '100%',      // Vem de longe
+  origin: 'left',        // Aparece da esquerda
+  duration: 1100,        // Duração da animação
+  easing: 'ease-in-out', // Suavização da animação
+  scale: 0.8,            // Começa menor e cresce até o tamanho original
+  opacity: 0,            // Inicia transparente
+  mobile: false
+});
+
+
+
+sr.reveal('.imgconteudo, .container.right .content', {
+  distance: '100%',
+  origin: 'right',       // Aparece da direita
+  duration: 1200,
+  easing: 'ease-in-out',
+  scale: 0.8,
+  opacity: 0,
+  mobile: false
+});
+
+sr.reveal('.conteudo, .imgconteudo', {
+  distance: '50px',
+  origin: 'bottom',       
+  duration: 1200,
+  easing: 'ease-in-out',
+  opacity: 0,
+  desktop: false
+});
+
+
+
+sr.reveal('.projetos', {
+  distance: '50px',
+  origin: 'bottom',       
+  duration: 1200,
+  easing: 'ease-in-out',
+  opacity: 0
+});
+
+sr.reveal('.timeline', {
+  distance: '50px',
+  origin: 'bottom',       
+  duration: 1200,
+  easing: 'ease-in-out',
+  opacity: 0
+});
+
+sr.reveal('.contact-form', {
+  distance: '50px',
+  origin: 'bottom',       
+  duration: 1200,
+  easing: 'ease-in-out',
+  opacity: 0
+});
+
+sr.reveal('.servicos', {
+  distance: '50px',
+  origin: 'bottom',       
+  duration: 1200,
+  easing: 'ease-in-out',
+  opacity: 0
+});
+
+
+
+
